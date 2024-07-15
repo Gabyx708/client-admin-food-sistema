@@ -87,7 +87,7 @@ const Login:React.FC = () => {
                   <IonInput onIonInput={handlePasswordChange} fill="outline" placeholder="Password" type="password" style={{ padding: '20px' }} />
                 </div>
                 <div style={{ marginBottom: '20px' }}>
-                  <IonButton onClick={handleLogin}>INGRESAR</IonButton>
+                  <IonButton onClick={handleLogin} color="danger">INGRESAR</IonButton>
 
                   <IonAlert
                     isOpen={isOpen}

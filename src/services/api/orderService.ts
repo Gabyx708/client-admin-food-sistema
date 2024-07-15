@@ -39,3 +39,8 @@ export const cancelOrder = async (id:string) => {
     const response = await axiosInstance.patch<OrderByIdResponse>(`/order/${id}/cancel`);
     return response.data;
 }
+
+export const completedOrder = async (id:string) => {
+    const response = await axiosInstance.patch(`/order/${id}/finished`);
+    return response;
+}

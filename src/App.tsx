@@ -51,6 +51,8 @@ import CommingSoon from './pages/comming_soon/CommingSoon';
 import OrderDetails from './pages/order_detail/OrderDetails';
 import CreateMenu from './pages/create_menu/CreateMenu';
 import CreateDish from './pages/create_dish/CreateDish';
+import SearchMenu from './pages/search_menu/SearchMenu';
+import MenuDetail from './pages/menu_detail/MenuDetail';
 
 setupIonicReact({
   rippleEffect: false,
@@ -72,12 +74,13 @@ const App: React.FC = () => {
           </Route>
           <Route exact path="/" render={()=> <Login/>}/>
           <Route path="/orders" render={()=><Order/>}/>
-          <Route path="/buscar" render={()=><OrderDetails/>}/>
+          <Route path="/menu_detail" render={()=><MenuDetail/>}/>
+          <Route path="/detail" render={()=><OrderDetails/>}/>
           <Route path="/plato" render={()=><CreateDish/>}/>
-          <Route path="/waiter" render={()=><CommingSoon/>}/>
           <Route path="/home" render={()=><Home/>}/>
           <Route path="/login" render={()=><Login/>}/>
           <Route path="/menu" render={()=><CreateMenu/>}/>
+          <Route path="/buscar" render={()=><SearchMenu/>}/>
         </IonRouterOutlet>
 
 
@@ -98,10 +101,6 @@ const App: React.FC = () => {
             <IonLabel>futuros</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="tab4" href="/waiter">
-            <IonIcon aria-hidden="true" icon={settings}/>
-            <IonLabel>mesero</IonLabel>
-          </IonTabButton>
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>

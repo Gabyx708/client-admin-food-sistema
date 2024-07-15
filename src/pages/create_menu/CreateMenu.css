@@ -1,0 +1,18 @@
+.custom-select {
+    width: calc(100% - 60px); /* Ajusta el ancho del IonSelect restando el ancho del botón AGREGAR + */
+    display: inline-block; /* Asegura que el IonSelect se muestre en línea */
+    vertical-align: middle; /* Alinea verticalmente con el IonInput */
+  }
+  
+  .stock {
+    width: 60px; /* Ancho fijo para el IonInput del stock */
+    display: inline-block; /* Asegura que el IonInput se muestre en línea */
+    vertical-align: middle; /* Alinea verticalmente con el IonSelect */
+  }
+  
+.especial-label {
+    font-weight: bold;
+    font-size: 1rem !important;
+    padding: 0.5em;
+    color: black;
+}

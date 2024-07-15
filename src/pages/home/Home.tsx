@@ -18,6 +18,7 @@ import { showTabBar } from "../../utils/tabBarVisibility";
 import { useAppContext } from "../../context/AppContext";
 import { BiSolidFoodMenu } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { HiUserAdd } from "react-icons/hi";
 
 const Home: React.FC = () => {
 
@@ -66,6 +67,17 @@ const Home: React.FC = () => {
               <BiSolidDish size={50} className="red-icon"/>
               <Link to="/plato">
               <h2>CREAR UN PLATO</h2>
+              </Link>
+            </div>
+          </IonCardContent>
+        </IonCard>
+
+        <IonCard>
+          <IonCardContent>
+            <div className="main-wrapper">
+              <HiUserAdd size={50} className="red-icon"/>
+              <Link to="/plato">
+              <h2>AGREGAR UNA PERSONA</h2>
               </Link>
             </div>
           </IonCardContent>
