@@ -1,0 +1,24 @@
+.red-icon
+{
+    color: var(--second-color);
+    margin: 0.5rem;
+}
+
+
+.main-wrapper
+{
+    display: flex;
+    align-items: center;
+}
+
+.main-wrapper h2
+{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+}

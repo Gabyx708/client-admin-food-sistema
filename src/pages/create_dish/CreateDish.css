@@ -1,0 +1,12 @@
+.form-dish {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+  }
+  
+  .form-dish ion-input {
+    margin-bottom: 20px;
+    padding: 1rem; 
+  }
+  

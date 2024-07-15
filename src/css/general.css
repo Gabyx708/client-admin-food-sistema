@@ -1,0 +1,12 @@
+.line-divider {
+    border: none;
+    height: 0.1px; /* Establece el grosor de la línea */
+    background-color: black; /* Color de relleno */
+}
+
+
+:root
+{
+    --main-color: #000;
+    --second-color: #D7204C;
+}
