@@ -36,7 +36,7 @@ const Home: React.FC = () => {
         <IonHeader collapse="condense"></IonHeader>
 
         <div style={{ padding: 20, fontWeight: "bolder" }}>
-          <h1>Hi, {nickname}</h1>
+          <h1>Saludos Administrador, {nickname}</h1>
         </div>
 
         <IonCard>
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
           <IonCardContent>
             <div className="main-wrapper">
               <HiUserAdd size={50} className="red-icon"/>
-              <Link to="/plato">
+              <Link to="/user">
               <h2>AGREGAR UNA PERSONA</h2>
               </Link>
             </div>

@@ -53,6 +53,7 @@ import CreateMenu from './pages/create_menu/CreateMenu';
 import CreateDish from './pages/create_dish/CreateDish';
 import SearchMenu from './pages/search_menu/SearchMenu';
 import MenuDetail from './pages/menu_detail/MenuDetail';
+import CreateUser from './pages/create_user/CreateUser';
 
 setupIonicReact({
   rippleEffect: false,
@@ -80,6 +81,7 @@ const App: React.FC = () => {
           <Route path="/home" render={()=><Home/>}/>
           <Route path="/login" render={()=><Login/>}/>
           <Route path="/menu" render={()=><CreateMenu/>}/>
+          <Route path="/user" render={()=><CreateUser/>}/>
           <Route path="/buscar" render={()=><SearchMenu/>}/>
         </IonRouterOutlet>
 
@@ -88,18 +90,18 @@ const App: React.FC = () => {
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/home">
             <IonIcon aria-hidden="true" icon={home} />
-            <IonLabel>home</IonLabel>
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="tab2" href="/orders">
             <IonIcon aria-hidden="true" icon={cart} />
-            <IonLabel>pedidos</IonLabel>
+            <IonLabel>Mis pedidos</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="tab3" href="/future">
+          {/* <IonTabButton tab="tab3" href="/future">
             <IonIcon aria-hidden="true" icon={calendar} />
             <IonLabel>futuros</IonLabel>
-          </IonTabButton>
+          </IonTabButton> */}
 
         </IonTabBar>
       </IonTabs>

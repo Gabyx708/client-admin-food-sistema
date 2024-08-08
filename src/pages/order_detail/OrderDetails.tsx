@@ -24,7 +24,7 @@ import { Item, ReceiptOrder } from "../../types/order/typeOrderResponse";
 import formatCurrency from "../../utils/formatCurrency";
 import formatDateWithTime from "../../utils/formatDateWithHour";
 import { useEffect, useState } from "react";
-import { completedOrder, getOrderById } from "../../services/api/orderService";
+import { cancelOrder, completedOrder, getOrderById } from "../../services/api/orderService";
 import axios from "axios";
 
 const OrderDetails: React.FC = () => {
@@ -86,6 +86,40 @@ const OrderDetails: React.FC = () => {
     }
   };
 
+
+  const handleCancel = async () => {
+    let id = orderDetail.id;
+    try {
+      const response = await cancelOrder(id);
+
+      if (response.status === 200) {
+        setOpenPopUp(true);
+        setPopUpText('Este pedido fue cancelado');
+
+        const updateOrder = await getOrderById(id);
+        setOrderDetail(updateOrder);
+      } else if (response.status === 409) {
+        setOpenPopUp(true);
+        setPopUpText('Ocurrió un problema al cambiar de estado');
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        const status = error.response.status;
+        if (status === 409) {
+          setOpenPopUp(true);
+          setPopUpText('Ocurrió un problema al cambiar de estado');
+        } else {
+          setOpenPopUp(true);
+          setPopUpText('Ocurrió un error inesperado');
+        }
+      } else {
+        setOpenPopUp(true);
+        setPopUpText('Ocurrió un error inesperado');
+      }
+      console.error('Error completing order:', error);
+    }
+  }
+
   return (
     <IonPage>
       <IonContent>
@@ -141,7 +175,7 @@ const OrderDetails: React.FC = () => {
           <IonCard>
             <IonCardContent>
               <div style={{display:"inline-flex"}}>
-              <IonButton color="danger">CANCELAR</IonButton>
+              <IonButton color="danger" onClick={handleCancel}>CANCELAR</IonButton>
               <IonButton color="success" onClick={handleFinished}>DAR POR COMPLETADO</IonButton>
               </div>
             </IonCardContent>
