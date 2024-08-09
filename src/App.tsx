@@ -54,6 +54,7 @@ import CreateDish from './pages/create_dish/CreateDish';
 import SearchMenu from './pages/search_menu/SearchMenu';
 import MenuDetail from './pages/menu_detail/MenuDetail';
 import CreateUser from './pages/create_user/CreateUser';
+import ChangePrice from './pages/change_price/ChangePrice';
 
 setupIonicReact({
   rippleEffect: false,
@@ -83,6 +84,7 @@ const App: React.FC = () => {
           <Route path="/menu" render={()=><CreateMenu/>}/>
           <Route path="/user" render={()=><CreateUser/>}/>
           <Route path="/buscar" render={()=><SearchMenu/>}/>
+          <Route path="/price" render={()=><ChangePrice/>}/>
         </IonRouterOutlet>
 
 

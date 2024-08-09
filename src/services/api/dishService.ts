@@ -23,3 +23,9 @@ export const getAllDishes = async(index:number,quantity:number):Promise<DishesPa
     const response = await axiosInstance.get(`/dish?index=${index}&quantity=${quantity}`);
     return response.data;
 }
+
+export const updatePrices = async(price:number) =>
+{
+    const response = await axiosInstance.post(`/dish/update-prices/${price}`);
+    return response;
+}
